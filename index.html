@@ -24,33 +24,69 @@
     </div>
     <div class="row">
         <div class="col text-center">
-            <button class="btn btn-outline-light">Информация</button>
+            <button class="btn btn-outline-light" data-bs-toggle="collapse" data-bs-target="#collapseA" aria-expanded="false" aria-controls="collapseA">
+                Информация
+            </button>
+            <div class="collapse" id="collapseA">
+                <div class="card card-body text-center">
+                    Нажмите "Генерация" для создания новой карточки!
+                </div>
+            </div> 
         </div>
         <div class="col text-center">
-            <button class="btn btn-outline-light">Напутствие</button>
+           <button class="btn btn-outline-light" data-bs-toggle="collapse" data-bs-target="#collapseB" aria-expanded="false" aria-controls="collapseB">
+                Напутствие
+           </button>
+           <div class="collapse" id="collapseB">
+             <div class="card card-body text-center">
+                Хорошего дня!
+             </div>
+            </div>
         </div>
         <div class="col text-center">
-            <button class="btn btn-outline-light">Контакты</button>
+            <button class="btn btn-outline-light" data-bs-toggle="collapse" data-bs-target="#collapseС" aria-expanded="false" aria-controls="collapseС">
+                Контакты
+            </button>
+            <div class="collapse" id="collapseС">
+                <div class="card card-body text-center">
+                    Наши контакты:Gambit47@yandex.ru
+                </div>
+            </div>
         </div>
     </div>
 </div>
-<div class="container" id="mainContent">
+<div class="container align-items-center" id="mainContent">
     <div class="row game-card align-items-center">
         <div class="col col-md-6 offset-md-3">
             <div class="card text-center">
                 <div class="card-header">
-                    <p class="m-0">Окно результатов генерации</p>
+                    <p class="m-0">Карта персональных данных</p>
                 </div>
                 <div class="card-body">
                     <div class="row">
                         <div class="col">
-                            <h3 class="card-title">Фамилия:<span id="surnameOutput">Генерация фамилии</span></h3>
+                            <h3 class="card-title">Фамилия: <span id="surnameOutput">Генерация фамилии</span></h3>
                             <h4>Имя: <span id="firstNameOutput">Генерация имени</span></h4>
-                            <p>
-                                <span id="genderOutput">Генерация пола</span>
-                                <span>, </span>
-                                <span id="birthYearOutput">Генерация года рождения</span>
-                            </p>
+                            <h4>Отчество: <span id="patronymicOutput">Отчество</span></h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div id="birthDayOutput">День рождения</div>
+                        </div>
+                        <div class="col">
+                            <div id="birthMonthOutput">Месяц рождения</div>
+                        </div>
+                        <div class="col">
+                            <div id="birthYearOutput">Год рождения</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div id="genderOutput">Пол</div>
+                        </div>
+                        <div class="col">
+                            <div id="specOutput">Профессия</div>
                         </div>
                     </div>
                 </div>
@@ -77,5 +113,6 @@
 </div>
 <script src="personGenerator.js"></script>
 <script src="init.js"></script>
+<script src="assets/script/bootstrap.min.js"></script>
 </body>
 </html>

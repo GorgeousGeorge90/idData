@@ -1,5 +1,5 @@
 const personGenerator = {
-    surnameJson: `{  
+    surnameMaleJson: `{  
         "count": 15,
         "list": {
             "id_1": "Иванов",
@@ -35,6 +35,21 @@ const personGenerator = {
             "id_10": "Андрей"
         }
     }`,
+    patronymicMaleJson: `{
+        "count": 10,
+        "list": {
+            "id_1": "Михайлович",
+            "id_2": "Генадьевич",
+            "id_3": "Игоревич",
+            "id_4": "Дмитриевич",
+            "id_5": "Алексеевич",
+            "id_6": "Александрович",
+            "id_7": "Эмирович",
+            "id_8": "Евгеньевич",
+            "id_9": "Викторович",
+            "id_10": "Андреевич" 
+        }
+    }`,
     firstNameFemaleJson: `{
         "count": 10,
         "list": {     
@@ -50,7 +65,88 @@ const personGenerator = {
             "id_10": "Карла"
         }
     }`,
-
+    surnameFemaleJson: `{
+        "count": 10,
+        "list": {     
+            "id_1": "Окольнова",
+            "id_2": "Осипова",
+            "id_3": "Андреева",
+            "id_4": "Морозова",
+            "id_5": "Алябьева",
+            "id_6": "Горячева",
+            "id_7": "Монахова",
+            "id_8": "Манаенкова",
+            "id_9": "Комарова",
+            "id_10": "Мальцева"
+        }
+    }`,
+    patronymicFemaleJson: `{
+        "count": 10,
+        "list": {
+            "id_1": "Михайловна",
+            "id_2": "Алексеевна",
+            "id_3": "Генадьевна",
+            "id_4": "Дмитриевна",
+            "id_5": "Александровна",
+            "id_6": "Эмировна",
+            "id_7": "Егорьевна",
+            "id_8": "Евгеньевна",
+            "id_9": "Викторовна",
+            "id_10": "Андреевна" 
+        }
+    }`,
+    birthMonthJson: `{
+        "count": 12,
+        "list": {
+            "id_1": "января",
+            "id_2": "февраля",
+            "id_3": "марта",
+            "id_4": "апреля",
+            "id_5": "мая",
+            "id_6": "июня",
+            "id_7": "июля",
+            "id_8": "августа",
+            "id_9": "сентября",
+            "id_10": "октября",
+            "id_11": "ноября",
+            "id_12": "декабря"
+        }
+    }`,
+    birthYearJson: `{
+        "count": 10,
+        "list": {     
+            "id_1": "1990",
+            "id_2": "1986",
+            "id_3": "1977",
+            "id_4": "1953",
+            "id_5": "1988",
+            "id_6": "1948",
+            "id_7": "1999",
+            "id_8": "2008",
+            "id_9": "2001",
+            "id_10": "1975"
+        }
+    }`,
+    specMaleJson: `{
+        "count": 5,
+        "list": {
+            "id_1": "дворник",
+            "id_2": "шахтер",
+            "id_3": "слесарь",
+            "id_4": "кочегар",
+            "id_5": "плотник" 
+        }
+    }`,
+    specFemaleJson: `{
+        "count": 5,
+        "list": {
+            "id_1": "учительница",
+            "id_2": "певица",
+            "id_3": "доярка",
+            "id_4": "домохозяйка",
+            "id_5": "воспитательница" 
+        }
+    }`,
 
     GENDER_MALE: 'Мужчина',
     GENDER_FEMALE: 'Женщина',
@@ -64,18 +160,35 @@ const personGenerator = {
     },
 
     randomFirstName: function() {
-        if () {
+        if (this.person.gender === this.GENDER_MALE) {
             return this.randomValue(this.firstNameMaleJson);
         } else {
             return this.randomValue(this.firstNameFemaleJson);
         };
     },
 
-
      randomSurname: function() {
+        if(this.person.gender === this.GENDER_MALE) {
+            return this.randomValue(this.surnameMaleJson);
+        } else {
+            return this.randomValue(this.surnameFemaleJson);
+        };
+    },
 
-        return this.randomValue(this.surnameJson);
+    randomPatronymic: function() {
+        if(this.person.gender === this.GENDER_MALE) {
+            return this.randomValue(this.patronymicMaleJson);
+        } else {
+            return this.randomValue(this.patronymicFemaleJson);
+        };
+    },
 
+     randomSpec: function() {
+        if(this.person.gender === this.GENDER_MALE) {
+            return this.randomValue(this.specMaleJson);
+        } else {
+            return this.randomValue(this.specFemaleJson);
+        };
     },
 
     randomGender: function() {
@@ -84,11 +197,34 @@ const personGenerator = {
 
     },
 
+    randomBirthDay: function() {
+
+        return randomIntNumber(31,0);
+
+    },
+
+    randomBirthMonth: function() {
+       
+        return this.randomValue(this.birthMonthJson); 
+
+    },
+
+    randomBirthYear: function() {
+
+        return this.randomValue(this.birthYearJson); 
+
+    },
+    
     getPerson: function() {
         this.person = {};
         this.person.gender = this.randomGender();
         this.person.firstName = this.randomFirstName();
         this.person.surname = this.randomSurname();
+        this.person.patronymic =this.randomPatronymic();
+        this.person.birthDay = randomBirthDay();
+        this.person.birthMonth = this.randomBirthMonth();
+        this.person.birthYear = this.randomBirthYear();
+        this.person.spec = this.randomSpec();
         return this.person;
     }
 };
