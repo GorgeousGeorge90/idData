@@ -95,6 +95,42 @@ const personGenerator = {
             "id_10": "Андреевна" 
         }
     }`,
+    birthDayJson: `{
+        "count": 31,
+        "list": {
+            "id_1": "1",
+            "id_2": "2",
+            "id_3": "3",
+            "id_4": "4",
+            "id_5": "5",
+            "id_6": "6",
+            "id_7": "7",
+            "id_8": "8",
+            "id_9": "9",
+            "id_10": "10",
+            "id_11": "11",
+            "id_12": "12",
+            "id_13": "13",
+            "id_14": "14",
+            "id_15": "15",
+            "id_16": "16",
+            "id_17": "17",
+            "id_18": "18",
+            "id_19": "19",
+            "id_20": "20",
+            "id_21": "21",
+            "id_22": "22",
+            "id_23": "23",
+            "id_24": "24",
+            "id_25": "25",
+            "id_26": "26",
+            "id_27": "27",
+            "id_28": "28",
+            "id_29": "29",
+            "id_30": "30",
+            "id_31": "31"
+        }
+    }`,
     birthMonthJson: `{
         "count": 12,
         "list": {
@@ -199,7 +235,7 @@ const personGenerator = {
 
     randomBirthDay: function() {
 
-        return randomIntNumber(31,0);
+        return this.randomValue(this.birthDayJson); 
 
     },
 
@@ -220,8 +256,8 @@ const personGenerator = {
         this.person.gender = this.randomGender();
         this.person.firstName = this.randomFirstName();
         this.person.surname = this.randomSurname();
-        this.person.patronymic =this.randomPatronymic();
-        this.person.birthDay = randomBirthDay();
+        this.person.patronymic = this.randomPatronymic();
+        this.person.birthDay = this.randomBirthDay();
         this.person.birthMonth = this.randomBirthMonth();
         this.person.birthYear = this.randomBirthYear();
         this.person.spec = this.randomSpec();

@@ -3,6 +3,10 @@
     background: url(https://cdn.pixabay.com/photo/2016/11/29/01/51/wood-1866654_1280.jpg);
 }
 
+#header .row {
+    height: 33%;
+}
+
 
 .logo img{
     height: 5vh;
@@ -15,15 +19,14 @@
 }
 
 .m-0 {
-    font-family: sans-serif;
+    font-family: fantasy;
     font-size: 1.1em;
     color: darkslateblue;
 }
 
 .card-title {
-    font-family: cursive;
-    font-size: 1.5em;
-    color: dimgray;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: black;
 }
 
 
