@@ -3,7 +3,7 @@
 
 ###  **Wellcome to** ***Generation Identification Card***
 
-![logo](assets/img/logo2.png)
+![logo](assets/img/newLogo.png)
 
 ###  Описание страницы:
 
