@@ -8,7 +8,8 @@
 }
 
 .game-card {
-    align-items: center;
+    height: 75vh;
+    font-size: 0.9em;
 }
 
 .logo img{
@@ -30,14 +31,6 @@
 .card-title {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: black;
-}
-
-
-
-#mainContent {
-    height: 75vh;
-    font-size: 0.9em;
-    
 }
 
 #footer {
